@@ -1,10 +1,13 @@
 body{
-  background-color: darkslategray;
+  /* background-color: darkslategray; */
   color: white;
+  background-image: url(../img/casino_36012.jpg);
 }
 
 h2{
   text-transform: uppercase;
+  text-shadow: 4px 4px 8px #000000;
+
 }
 
 .box-insert{
@@ -62,4 +65,5 @@ th, td{
   font-weight: bolder;
   font-size: 90px;
   padding-top: 20px;
+  text-shadow: 4px 4px 8px #000000;
 }
