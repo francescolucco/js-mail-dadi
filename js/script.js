@@ -4,7 +4,6 @@ btnGenera.addEventListener('click',function(){
   
   const mailUser = document.getElementById('mailForm').value;
   const ticket = document.getElementById('ticket-table');
-  const errore = document.getElementById('errore');
 
   const listaMail = ['anthony@gmail.com',
 'andreab@gmail.com',
@@ -37,7 +36,6 @@ btnGenera.addEventListener('click',function(){
 'davide@gmail.com',
 'luigi@gmail.com'];
 
-
 let mailVerificata = false;
 const stampMail = document.getElementById('mailInserita');
 
@@ -68,56 +66,6 @@ if(mailVerificata == true){
     ticket.classList.add('show');
     ticket.classList.remove('hide');
 
-    const generaNumero = document.getElementById('btn-primary');
-
-    generaNumero.addEventListener('click', function(){
-  
-  const numPC = Math.floor(Math.random()*6)+1;
-  const numUtente = Math.floor(Math.random()*6)+1;
-  let msg = ''
-  
-  console.log('PC: ' + numPC);
-  console.log('Tu: ' + numUtente);
-  
-  if(numPC < numUtente){
-    msg = ('Hai vinto!')
-    console.log('Hai vinto!');
-  }else if(numPC == numUtente){
-    msg = ('Pari! Ritira i dadi.')
-    console.log('Pari! Ritira i dadi.');
-  }
-  else{
-    msg = ('Hai perso! Ritenta e sarai più fortunato.')
-    console.log('Hai perso! Ritenta e sarai più fortunato.');
-  }
-}
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   }else{
     document.getElementById('error-msg').innerHTML = errorMsg;
@@ -125,3 +73,33 @@ if(mailVerificata == true){
     ticket.classList.remove('show');
   }
 });
+
+const generaNumero = document.getElementById('btn-primary');
+
+generaNumero.addEventListener('click',function(){
+
+const numPC = Math.floor(Math.random()*6)+1;
+const numUtente = Math.floor(Math.random()*6)+1;
+const risultato = document.getElementById('risultato-set');
+let msg = '';
+
+console.log('PC: ' + numPC);
+console.log('Tu: ' + numUtente);
+
+if(numPC < numUtente){
+msg = ('Hai vinto!');
+console.log('Hai vinto!');
+risultato.innerHTML =  msg;
+}else if(numPC == numUtente){
+msg = ('Pari! Ritira i dadi.');
+console.log('Pari! Ritira i dadi.');
+risultato.innerHTML =  msg;
+}
+else{
+msg = ('Hai perso! Ritenta e sarai più fortunato.');
+console.log('Hai perso! Ritenta e sarai più fortunato.');
+risultato.innerHTML =  msg;
+};
+}
+);
+
